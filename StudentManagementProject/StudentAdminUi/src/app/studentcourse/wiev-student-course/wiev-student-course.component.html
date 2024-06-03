@@ -1,0 +1,12 @@
+<form [formGroup]="addCourseForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="studentName">Student Name</label>
+      <input id="studentName" formControlName="studentName">
+    </div>
+    <div>
+      <label for="courseNames">Course Names (comma separated)</label>
+      <input id="courseNames" formControlName="courseNames">
+    </div>
+    <button type="submit">Add Courses</button>
+  </form>
+  

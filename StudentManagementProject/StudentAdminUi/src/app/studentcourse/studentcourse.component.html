@@ -1,0 +1,63 @@
+<div class="page-header">
+  <div class="container">
+      <h1>Öğrenci ve Kursları Listesi</h1>
+  </div>
+</div>
+<div class="sidebar">
+  <div class="sidebar-header">
+      <h3>School Management</h3>
+  </div>
+  <ul class="menu">
+      <li><a routerLink="/students">Öğrenci Listesi</a></li>
+      <li><a routerLink="/course">Kurs Listesi</a></li>
+      <li><a routerLink="/paymenthistory">Ödeme Geçmişi</a></li>
+      <li><a routerLink="/installment">Taksit Tablosu</a></li>
+      <li><a routerLink="/payment">Ödeme Tablosu</a></li>
+      <li><a routerLink="/teacher">Öğretmen Listesi</a></li>
+      <li><a routerLink="/studentcourse">Öğrenci ve Kursları  Listesi</a></li>
+  </ul>
+  <div class="logout">
+      <a routerLink="/login">Çıkış Yap</a>
+  </div>
+</div>
+<div class="container mt-1">
+      <div class="row end-xs">
+        <div class="col-xs-12">
+          <a mat-raised-button style="margin-right: 10px;" color="primary" [routerLink]="['/studentcourse/add']">Ekle</a>
+           <input type="text" class="search-input" placeholder="Ara" [(ngModel)]="filterString" (keyup)="filterStudentscOURSE()"> 
+        </div>
+      </div>
+  </div>
+
+<div class="container">
+  <div class="mt-1 mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="studentCourseId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> studentCourseId </th>
+        <td mat-cell *matCellDef="let element"> {{element.studentCourseId}} </td>
+      </ng-container>  
+      <ng-container matColumnDef="studentId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> studentId </th>
+        <td mat-cell *matCellDef="let element"> {{element.studentId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="studentName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> studentName </th>
+        <td mat-cell *matCellDef="let element"> {{element.studentName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="courseId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> courseId </th>
+        <td mat-cell *matCellDef="let element"> {{element.courseId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="courseName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> courseName </th>
+        <td mat-cell *matCellDef="let element"> {{element.courseName}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20, 30]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+</div>

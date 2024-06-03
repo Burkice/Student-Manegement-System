@@ -1,0 +1,107 @@
+<div class="page-header">
+    <div class="container">
+        <h1>{{header}}</h1>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="row p-1">
+      <div class="col-xs-12 row end-xs">
+        <a routerLink="/students" color="primary" mat-raised-button>
+          <mat-icon>chevron_left</mat-icon>
+          Geri Dön
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <form #studentDetailsForm="ngForm">
+          <div class="row">
+            <div class="col-xs-6">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Ad</mat-label>
+                <input matInput [(ngModel)]="student.firstname" name="firstname">
+              </mat-form-field>
+            </div>
+            <div class="col-xs-6">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Soyad</mat-label>
+                <input matInput [(ngModel)]="student.lastname" name="lastName">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <mat-form-field appearance="outline">
+                <mat-label>Doğum Tarihi</mat-label>
+                <input matInput [matDatepicker]="picker"  [(ngModel)]="student.dateofBirth" name="dateOfBirth">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="student.email" name="email">
+              </mat-form-field>
+            </div>
+            <div class="col-xs-6">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Telefon</mat-label>
+                <input matInput [(ngModel)]="student.phone" name="mobile">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Cinsiyet</mat-label>
+                <input matInput [(ngModel)]="student.gender" name="gender">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Adres</mat-label>
+                <textarea matInput [(ngModel)]="student.address.physicalAddress" name="physicalAddress"></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Posta Kodu</mat-label>
+                <textarea matInput [(ngModel)]="student.address.postalAddress" name="postalAddress"></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+                <div class="row between-xs" *ngIf="!isNewStudent">
+                    <button mat-raised-button color="primary" (click)="onUpdate()">Kaydet</button>
+                    <button mat-raised-button color="warn" (click)="onDelete()">Sil</button>
+                </div>
+                <div class="row between-xs" *ngIf="isNewStudent">
+                    <button mat-raised-button color="primary" (click)="onAdd()">Kaydet</button>
+                 
+                </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-xs-6">
+        <a >
+            <img src="/assets/okul_icon.png" style="margin-left: 400px;
+            padding: 40px;
+            width: 300px;" alt="">
+        </a>
+      </div>
+    </div>
+  
+  
+  </div>
+  
+  

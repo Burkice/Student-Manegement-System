@@ -1,0 +1,93 @@
+<div class="page-header">
+    <div class="container">
+        <h1>Taksit Tablosu</h1>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h3>School Management</h3>
+    </div>
+    <ul class="menu">
+      <li><a routerLink="/students">Öğrenci Listesi</a></li>
+      <li><a routerLink="/course">Kurs Listesi</a></li>
+      <li><a routerLink="/paymenthistory">Ödeme Geçmişi</a></li>
+      <li><a routerLink="/installment">Taksit Tablosu</a></li>
+      <li><a routerLink="/payment">Ödeme Tablosu</a></li>
+      <li><a routerLink="/teacher">Öğretmen Listesi</a></li>
+      <li><a routerLink="/studentcourse">Öğrenci ve Kursları  Listesi</a></li>
+    </ul>
+    <div class="logout">
+      <a routerLink="/login">Çıkış Yap</a>
+    </div>
+  </div>
+  
+
+  <div class="container mt-1">
+    <div class="row end-xs">
+      <div class="col-xs-12 ">
+         <input type="text" class="search-input" placeholder="Ara" [(ngModel)]="filterString" (keyup)="filterStudents()"> 
+      </div>
+    </div>
+</div>
+
+  <div class="container">
+    <div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin-top: 20px;">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> id. </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="periodId">
+              <th mat-header-cell *matHeaderCellDef> periodId </th>
+              <td mat-cell *matCellDef="let element"> {{element.periodId}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="installmentC">
+              <th mat-header-cell *matHeaderCellDef> Taksit Sayısı </th>
+              <td mat-cell *matCellDef="let element"> {{element.installmentC}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="installmentt">
+              <th mat-header-cell *matHeaderCellDef> Ödeme Tipi </th>
+              <td mat-cell *matCellDef="let element"> {{element.installmentt}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="paymentStatus">
+                <th mat-header-cell *matHeaderCellDef> Ödeme Durumu </th>
+                <td mat-cell *matCellDef="let element"> {{element.paymentStatus}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="student">
+                <th mat-header-cell *matHeaderCellDef> Ad </th>
+                <td mat-cell *matCellDef="let element"> {{element.student.firstname}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="edit">
+                <th mat-header-cell *matHeaderCellDef>  </th>
+                <td mat-cell *matCellDef="let element"> 
+                  {{element.edit}} 
+                  <a mat-raised-button style="margin-right: 10px;" color="primary" routerLink="/installmentPay">Öde</a>
+                </td>
+              </ng-container>
+              
+
+
+            
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+          
+    </div>
+  </div>

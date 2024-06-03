@@ -1,0 +1,34 @@
+Öğrenci Yönetim Sistemi Projesi Kullanım Kılavuzu
+Bu proje, bir Öğrenci Yönetim Sistemi projesidir. Backend kısmında C# ASP.NET Web API, ön yüz kısmında ise Angular kullanılmıştır.
+
+Adım Adım Kullanım Kılavuzu
+1. Adım: Login Ekranı
+Projeyi ilk açtığınızda sizi bir Login ekranı karşılar. Bu ekranda, login olmadan diğer sayfalara URL üzerinden veya başka bir şekilde giriş yapamazsınız. Giriş yapmak için aşağıdaki bilgileri kullanın:
+
+Kullanıcı Adı: sego
+Şifre: 123
+2. Adım: Öğrenci Yönetim Sayfası
+Login olduktan sonra sizi "Students" sayfası karşılar. Bu sayfada aşağıdaki işlemleri gerçekleştirebilirsiniz:
+
+Öğrenci Ekleme: "Ekle" butonuna basarak yeni bir öğrenci ekleyebilirsiniz.
+Öğrenci Bilgilerini Düzenleme: Kalem butonuna tıklayarak var olan bir öğrencinin bilgilerini düzenleyebilirsiniz.
+3. Adım: Öğrenci ve Kurs Yönetimi
+Öğrencilere kurs eklemek için "Öğrenci ve Kurs Listesi" sayfasına giriniz. Bu sayfada şu işlemleri yapabilirsiniz:
+
+Öğrenci Bilgilerini Görüntüleme: Öğrencilerin mevcut bilgilerini görüntüleyebilirsiniz.
+Kurs Ekleme: "Ekle" butonuna basarak öğrencilere kurs ekleyebilirsiniz. Bunun için eklemek istediğiniz öğrencinin adını ve eklemek istediğiniz kursun ismini girerek işlemi tamamlayabilirsiniz.
+4. Adım: Ödeme Yönetimi
+Kurs ekledikten sonra, toplam fiyat ödeme tablosuna eklenir. Ödeme işlemleri için şu adımları izleyin:
+
+Ödeme Tipi Belirleme: "Ödeme İşlemleri" butonuna tıklayarak ödemenin peşin mi yoksa taksitli mi olacağını belirleyin.
+Peşin Ödeme: Ödeme peşinse, %10 indirim uygulanarak ödeme geçmişi tablosuna kayıt yapılır.
+Taksitli Ödeme: Ödeme taksitliyse, taksit sayısı kadar kayıt taksit tablosuna eklenir. Ödeme tipi peşinse, taksit sayısına 0 yazılır.
+5. Adım: Taksit Ödeme
+Taksit tablosunda, ilgili öğrenci adına ait ödeme tablosuna girilen taksit sayısı kadar taksit oluşur. Aşağıdaki adımları izleyerek ödeme yapabilirsiniz:
+
+Taksit Ödeme: "Öde" butonuna basarak ödemek istediğiniz taksit ID'sini ve miktarını giriniz. Bu işlemle, ödeme geçmişi tablosuna ödenen taksit tutarı kayıt edilir.
+Genel Bilgiler ve İpuçları
+Güvenlik: Sistem login olmadan diğer sayfalara erişimi engeller, böylece kullanıcı verileri güvence altına alınır.
+Kullanıcı Arayüzü: Angular kullanılarak modern ve kullanıcı dostu bir arayüz sağlanmıştır.
+Veri Yönetimi: ASP.NET Web API ile backend veritabanı yönetimi yapılır, bu sayede veriler güvenli ve hızlı bir şekilde işlenir.
+Bu kullanım kılavuzu, projeyi etkin bir şekilde kullanmanıza yardımcı olacak temel adımları ve bilgileri içermektedir. Herhangi bir sorunla karşılaşırsanız veya daha fazla bilgiye ihtiyaç duyarsanız, proje yöneticinize başvurabilirsiniz.

@@ -1,0 +1,46 @@
+/* Genel container stilleri */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Sayfa başlığı stilleri */
+  .page-header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* Geri Dön butonu stilleri */
+  .back-button {
+    margin-bottom: 20px;
+  }
+  
+  /* Form alanları */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  /* Kaydet butonu stilleri */
+  .save-button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Sağ taraftaki içerik */
+  .right-content {
+    text-align: center;
+  }
+  
+  /* İkon */
+  .icon {
+    font-size: 64px;
+    color: #007bff;
+  }
+  

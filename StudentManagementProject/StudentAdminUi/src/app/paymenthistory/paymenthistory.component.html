@@ -1,0 +1,70 @@
+<div class="page-header">
+    <div class="container">
+        <h1>Ödeme Geçmişi</h1>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-header">
+        <h3>School Management</h3>
+    </div>
+    <ul class="menu">
+        <li><a routerLink="/students">Öğrenci Listesi</a></li>
+        <li><a routerLink="/course">Kurs Listesi</a></li>
+        <li><a routerLink="/paymenthistory">Ödeme Geçmişi</a></li>
+        <li><a routerLink="/installment">Taksit Tablosu</a></li>
+        <li><a routerLink="/payment">Ödeme Tablosu</a></li>
+        <li><a routerLink="/teacher">Öğretmen Listesi</a></li>
+        <li><a routerLink="/studentcourse">Öğrenci ve Kursları  Listesi</a></li>
+    </ul>
+    <div class="logout">
+        <a routerLink="/login">Çıkış Yap</a>
+    </div>
+</div>
+  <div class="container">
+    <div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="periodId">
+              <th mat-header-cell *matHeaderCellDef> periodId </th>
+              <td mat-cell *matCellDef="let element"> {{element.periodId}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="installmentId">
+              <th mat-header-cell *matHeaderCellDef> installmentId </th>
+              <td mat-cell *matCellDef="let element"> {{element.installmentId}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="paymentAmount">
+              <th mat-header-cell *matHeaderCellDef> paymentAmount </th>
+              <td mat-cell *matCellDef="let element"> {{element.paymentAmount}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="recordStatus">
+                <th mat-header-cell *matHeaderCellDef> recordStatus </th>
+                <td mat-cell *matCellDef="let element"> {{element.recordStatus}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="paymentType">
+                <th mat-header-cell *matHeaderCellDef> paymentType </th>
+                <td mat-cell *matCellDef="let element"> {{element.paymentType}} </td>
+              </ng-container>
+
+              
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </div>
+  </div>
